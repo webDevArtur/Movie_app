@@ -22,15 +22,18 @@ const Header = (): JSX.Element => {
             }}
             position="static"
         >
-            <Box
-                style={{
-                    backgroundImage: `url(${header_logo})`,
-                    backgroundSize: 'contain',
-                    backgroundRepeat: 'no-repeat',
-                    height: '100px',
-                    borderRadius: '40px',
-                }}
-            />
+            <Link to="/">
+                <Box
+                    style={{
+                        backgroundImage: `url(${header_logo})`,
+                        backgroundSize: 'contain',
+                        backgroundRepeat: 'no-repeat',
+                        height: '100px',
+                        borderRadius: '40px',
+                    }}
+                />
+            </Link>
+
             <Box
                 style={{
                     display: 'grid',
