@@ -22,7 +22,7 @@ interface Movie {
 
 const HomePage: React.FC = () => {
     const handleScroll = () => {
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight) {
             store.fetchMovies()
         }
     }
