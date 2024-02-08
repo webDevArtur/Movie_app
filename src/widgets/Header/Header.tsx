@@ -14,7 +14,6 @@ const Header = (): JSX.Element => {
     return (
         <AppBar
             style={{
-                background: 'хз',
                 display: 'grid',
                 gridTemplateColumns: 'repeat(2, 1fr)',
                 boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
@@ -22,23 +21,25 @@ const Header = (): JSX.Element => {
             }}
             position="static"
         >
-            <Link to="/">
-                <Box
-                    style={{
-                        backgroundImage: `url(${header_logo})`,
-                        backgroundSize: 'contain',
-                        backgroundRepeat: 'no-repeat',
-                        height: '100px',
-                        borderRadius: '40px',
-                    }}
-                />
-            </Link>
+            <Box>
+                <Link to="/">
+                    <img
+                        src={header_logo}
+                        alt="header_logo"
+                        style={{ width: '150px' }}
+                    />
+                </Link>
+            </Box>
 
             <Box
                 style={{
                     display: 'grid',
                     gap: '10px',
                     gridTemplateColumns: 'repeat(3, 1fr)',
+                    alignItems: 'center',
+                    ...(window.innerWidth < 490 && {
+                        gridTemplateColumns: '1fr',
+                    }),
                 }}
             >
                 {menuList.map((el) => (
@@ -52,7 +53,6 @@ const Header = (): JSX.Element => {
                                 color: '#fff',
                                 fontSize: '16px',
                                 width: '100%',
-                                height: '100%',
                             }}
                             variant="text"
                         >
