@@ -20,7 +20,7 @@ class MovieStore {
     async fetchMovies() {
         try {
             const response = await axios.get(
-                `http://www.omdbapi.com/?s=star wars&apikey=5072c76d&page=${this.page}`
+                `https://www.omdbapi.com/?s=star wars&apikey=5072c76d&page=${this.page}`
             )
             const newMovies = response.data.Search
             this.movies = this.movies.concat(newMovies)
